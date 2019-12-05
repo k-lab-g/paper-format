@@ -1,0 +1,146 @@
+%%% 大阪大学大学院工学研究科
+%%% 知能・機能創成工学専攻修士論文スタイルファイル
+%%% $Id: amsthesis.sty,v 1.1 2001/12/21 15:35:56 nakatani Exp nakatani $
+
+\setlength{\textheight}{21.0truecm}
+\setlength{\textwidth}{15.5truecm}
+\setlength{\topmargin}{0.5truecm}
+\setlength{\oddsidemargin}{1.0truecm}
+\setlength{\evensidemargin}{1.0truecm}
+\setlength{\headsep}{1.5truecm}
+\setlength{\footskip}{1.5truecm}
+\setlength{\jot}{2truemm}
+\parindent 1.0zw
+\kanjiskip=1.0pt plus 1.0pt minus 1.0pt         % for NIHONGO Ascii Micro TeX
+
+%%% 引用符(citation)
+%\def\citeform#1{#1)}
+%\def\@biblabel#1{\hfil #1)}
+
+
+
+
+%%% 図，表のcaption
+\def\setcaption#1{\def\@captype{#1}}
+%\def\fnum@figure{Fig. \thefigure}
+%\def\fnum@table{Table \thetable}
+\def\fnum@figure{図\thefigure}
+\def\fnum@table{表\thetable}
+\long\def\@makecaption#1#2{
+\setbox\@tempboxa\hbox{#1\ #2}
+\ifdim \wd\@tempboxa > \hsize
+%  \addtolength{\hsize}{-1.5cm}
+\hbox to\hsize{\hfil #1 \mbox{~} \begin{minipage}[t]{\hsize}\par\baselineskip 4mm\par #2 \end{minipage}\hfil}
+  \par
+\else \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+\fi}
+
+%表 Hlineがあれば太線に
+\def\Hline{\noalign{\hrule height 0.4mm}}
+
+%%%
+\intextsep 1.0zw plus 2pt minus 2pt
+\@addtoreset{equation}{chapter} 
+\@addtoreset{figure}{chapter} 
+\@addtoreset{table}{chapter} 
+
+%%% \eqnarray を綺麗に
+\def\eqnarray{\stepcounter{equation}\let\@currentlabel=\theequation
+\global\@eqnswtrue
+\global\@eqcnt\z@\tabskip
+%\@centering
+\mathindent
+\let\\=\@eqncr
+$$\halign to \displaywidth\bgroup\@eqnsel\hskip\@centering
+  $\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne 
+  \hfil$\displaystyle{{}##{}}$\hfil
+  &\global\@eqcnt\tw@$\displaystyle\tabskip\z@{##}$\hfil 
+  \tabskip\@centering&{##}\tabskip\z@\cr
+  &&&\cr\noalign{\vskip-\baselineskip}}
+
+\def\@@eqncr{\let\@tempa\relax 
+    \ifcase\@eqcnt \def\@tempa{& &}\or \def\@tempa{&} 
+      \else \def\@tempa{}\fi 
+     \@tempa \span \if@eqnsw\cdotfill\@eqnnum\stepcounter{equation}\fi
+     \global\@eqnswtrue\global\@eqcnt\z@\cr}
+
+%%% 講座名の定義
+\def\laboratory#1{\def\@laboratory{#1}}
+\def\gakuseki#1{\def\@gakuseki{#1}}
+
+%%% 表紙
+\renewcommand{\maketitle}{\begin{titlepage}%
+  \let\footnotesize\small
+  \let\footnoterule\relax
+  \let\footnote\thanks
+  \null\vfil
+\vspace{-2cm}
+{\huge
+\begin{center}
+%  千葉大学大学院 融合理工学府\\修士論文
+  千葉大学 工学部 情報画像学科\\卒業論文
+\end{center}
+}
+\vspace{1cm}
+{\LARGE
+\begin{center}
+  \@title
+\end{center}
+}
+\vspace{3cm}
+\vfill
+{\LARGE
+\vspace{1zh}
+\begin{center}
+%  情報科学専攻 知能情報コース\\ \@laboratory \\
+  \@gakuseki
+\end{center}
+\vspace{1zh}
+{\LARGE
+\begin{center}
+  \@author
+\end{center}
+}
+\vspace{1cm}
+\begin{center}
+  指導教員　小室 信喜 准教授
+\end{center}
+\begin{center}
+  \@date 提出
+\end{center}
+%\par\vspace*{3\baselineskip}\par
+} % \LARGE
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\p@thanks\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+} % \maketitle
+
+%%% 概要
+\def\abstract{\thispagestyle{empty}
+\noindent {\LARGE\bf 概　要}\par}
+\def\endabstract{\clearpage\setcounter{page}{1}}%
+
+%%% 謝辞
+\def\acknowledgement{
+\chapter*{謝　辞}
+    \addcontentsline{toc}{chapter}{謝　辞}%
+}
+
+%%% 見出し文字の変更
+\renewcommand{\contentsname}{目　次}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\indexname}{索　引}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table}
+\renewcommand{\appendixname}{付　録}
+

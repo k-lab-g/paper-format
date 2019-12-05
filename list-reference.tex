@@ -1,0 +1,92 @@
+﻿\documentclass[a4j,10pt]{jarticle}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{246mm}
+\setlength{\oddsidemargin}{-0.4mm} 
+\setlength{\evensidemargin}{-0.4mm}
+\setlength{\topmargin}{-5.4mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\footskip}{5mm}
+\begin{document}
+\begin{center}
+\large
+参考文献メモ 
+\end{center}
+\begin{flushright}
+小室 信喜 \\
+千葉大学統合情報センター
+\end{flushright}
+\hrulefill \\
+非直交符号シフトキーイングを用いた光強度変調方式に関する研究に関する参考文献およびその抄録、コメント等を以下に示す。
+\begin{enumerate}
+\item H.M. Kwon, 
+"Optical Orthogonal Code-division Multiple-access system -- Part I: APD Noise and Thermal Noise," 
+IEEE Trans. Communications,vol.42, no.7, pp.2470--2479, July 1994. \\
+光多重アクセスシステムにおいて、制御信号や複雑なシステムを構築せずに各ユーザが共通のチャネルを利用することによってスループット効率や導入コストを削減する方法として、光直交符号分割多元接続 (OOCDMA: Optical Orthogonal Code Division Multiple Access) が研究されている。これまでのOOCDMAに関する研究として、理想的な環境（ユーザ間干渉のみ考慮）における誤り率特性の理論式が導出されている。本論文では、ユーザ間干渉だけではなくAPD (Avalanche PhotoDiode)による雑音と熱雑音の影響を考慮した誤り率特性の理論式を導出する。APDは通常のフォトダイオードに比べ、電子なだれを倍増することによって電流値を$G$倍にすることができる。数値結果より、APD雑音および熱雑音を考慮することによって理想的な場合と比べ誤り率特性が2オーダ悪くなることが示されている。また、雑音が存在する環境においては、ハードリミッタを受信機側に導入（システム的に干渉を減らす）する効果が低いことが示されている。
+%
+\item Y. Qiu, S. Chen, H.H. Chen, W. Meng, 
+"Visible Light Communication based on CDMA Technology," 
+IEEE Wireless Communications, vol.25, no.2, pp.178--185, Apr. 2018.\\
+可視光通信は通信機能を光の供給を同時に実現する技術であり、次世代無線通信の重要な役割を担うことが期待されている。電波による無線通信と比べ、可視光通信には非常にたくさんの特徴を有する。例えば、電波の免許が不要であること、高い伝送レートを供給できること、電磁気による干渉に対する耐性があることなどが挙げられる。本論文では、可視光通信における符号分割多元接続技術に着目し、それらに係るこれまでの技術を紹介する。本論文では、可視光CDMAシステムをユニポーラ符号を用いたシステムとバイポーラ符号を用いたシステムに大別し、システム構成、符号設計などの点からこれまでの可視光CDMAシステムの特徴について検討する。収容できるユーザ数、ビット誤り率などの点から可視光CDMAシステムを検討した。その結果、可視光CDMAの容量は符号の訂正能力によって決定されることが示されている。
+%
+\item M.Y. Liu, T.L. Wang, S.M. Tseng, 
+"Throughput Performance Analysis of Ascynchronous Optical CDMA Networks 
+with Channel Load Sensing Protocol," 
+IEEE Photonics Journal, vol.9, no.3, June 2017.\\
+本論文では、光CDMAシステムにおいて高トラフィック時にスループット性能が減少する問題を解決するため、CLSP (Channel Load Sensing Protocol) を用いた光CDMAを提案する。性能を劣化させる要因として、ユーザ間干渉およびビート雑音、熱雑音、ショット雑音および比較的強い雑音を考慮する。提案方式では、物理的な障害による影響を緩和する耐え、光ハードリミッタと誤り訂正符号を用いる。著者らは、$M/M/\infty$待ち行列モデルに基づいて提案システムの性能解析を行い、高トラフィック時におけるスループット低下を抑えるための最適なCLSPしきい値を導出している。数値結果より、提案方式は最適なしきい値を用いることによってスループットが大幅に改善し、高トラフィックにおいてもスループットを維持できることが示されている。\footnote{電波による無線を用いたシステムにおいて、CSK/CDMAにCLSPを導入することにより、DS/CDMAよりもスループット性能および遅延特性を大幅に改善できることを示した。\bf{非直交CSKを用いたIM/DD方式をCDMAに拡張し（今後、マルチユーザ環境での解析を行う必要あり）、非直交CSKを用いた光CDMAにCLSPを導入することにより、この論文よりもスループットや遅延特性を大幅に改善できると期待}できる。}
+%
+\item S.H. Chen, C.W. Chow, 
+"Color-shift Keying Code-division Multiple-access Transmission for RGB-LED Visible Light Communications using Mobile Phone Camera," 
+IEEE Photonics Journal, vol.7, no.6., Dec. 2014. \\
+昨今さまざまなアプリケーションにLEDが使われるようになってきている。また、イメージセンサやカメラを搭載した携帯電話が普及している。そのため、低コストて通信を提供する技術として、LEDと携帯カメラを用いた可視光通信が注目されている。本論文では、CSK (Color Shift Keying) 変調とCDMA技術を用いた可視光通信システムを実装する。受信機側には携帯カメラを用い、可視光通信における通信容量の向上と色間の干渉を抑えることを目的としてCSKを用いる。実機実験より、マルチユーザ環境において提案方式はエラーフリー伝送を達成できることを示した。
+%
+\item K. Kiasaleh, 
+"Performance of APD-based, PPM Free-space Optical Communication Systems in Atmospheric Turbulence," 
+IEEE Trans. Communications, vol.53, no.9, pp.1455--1461, Sept. 2005. 
+%
+\item X. Zhu, J.M. Kahn, 
+"Free-space Optical Comuunication through Atmospheric Turbulence Channels," 
+IEEE Trans. Communications, vol.50, no.8, pp.1293--1300, Aug. 2002.\\
+上記2論文は、大気の不安定性のよって生じる光強度のゆらぎを考慮した光強度変調/直接検波 (IM/DD: Intensity Modulation with Direct Detection)方式の性能解析式が導出されている。Kiasalehは、パルス位置変調 (PPM: Pulse Position Modulation)を用いたIM/DD方式、Zhuらはオンオフキーイング (OOK: On-off Keying)を用いたIM/DD方式を対象とし、性能解析式を導出している。\footnote{非直交CSKを用いたIM/DD方式において大気の不安定性のよって生じる光強度のゆらぎ（シンチレーション）を考慮した性能解析を行う際に、本論文を参考にした。}
+%
+%
+\item M. Hadi, M.R. Pakravan, 
+"Analysis and Design of Adaptive OCDMA Passive Optical Networks," 
+Journal of Lightwave Technology, vol.35, no.14, pp.2853--2863, 2017. \\
+ユーザ識別のための1D 光直交符号およびネットワークスループットを向上するための 2D波長-時間光符号を組み合わせたマルチクラス光CDMAシステムを提案されている。マルチクラス光CDMA方式は、伝送レートやビット誤り率の観点からQoSをユーザによって差別化できる方式である。マルチクラス光CDMA方式においては、シンプルかつ効率的な動的リソース割当およびシステムの再設計が重要である。マルチクラス光CDMA方式はビット誤り率の計算が困難であるため、動的にリソース割当をするのが困難である。そこで、本論文では、マルチクラス光CDMAのビット誤り率の近似式を求める。シミュレーションより、近似式の妥当性が示されている。
+%
+\item J. Li, M. Uysal,  
+"Optical Wireless Communications: System Model, Capacity and Coding," 
+Proc. IEEE VTC, vol.1, pp.168--172, Oct. 2003. \\
+本論文では、OOK IM/DD 方式の屋外直距離伝送を考慮したチャネル容量および停止確率が計算されている。数値結果より、大気の不安定性が小さいとき、ターボ符号は容量に近い伝送レートとなるが、大気の不安定性が大きいときにはチャネル容量と伝送レートのギャップが大きくなることが示されている。
+%
+\item T. Yamashita, M. Hanawa, Y. Tanaka, M. Takahara, 
+"An Optical Code Division Multiplexing System using Hadamard Codes and SIK," 
+IEICE Technical Report, OCS98-1, May 1998. \\
+本論文では、シーケンスインバージョン (SIK: Sequence Inversion Keying) 方式が検討されている。SIK方式は、情報データに応じて2つの符号のうち1つの符号を選択し、その符号系列に従って光パルスを時間拡散することで1ビットのデータを伝送する方式である。SIK方式は受信機におけるしきい値設定を必要とせず、OOKと同じ伝送速度を達成できる方式である。
+%
+\item Y. Kozawa, H. Habuchi, 
+"Theoretical Ananlysis of Atomospheric Optical DS/SS with On-off Orthogonal 
+M-sequence Pairs," Proc. ICICS, P0686, Dec. 2007. \\
+本稿では、擬直交M系列対を用いた光無線DS/SS方式について検討を行っている。情報変調方式としてユーザに2つの拡散符号系列を割り当てるコードシフトキーイング形式型DS/SS方式と、1つの拡散符号系列を使用するオンオフキーイング型DS/SS方式を取り上げている。本稿では、この2つの情報変調方式を適用した場合について、シンチレーション、背景光、APD雑音、熱雑音、多元接続干渉を考慮したビット誤り率を導出している。さらに、擬直交M系列対を使用したコードシフトキーイング型DS/SS方式と従来方式である拡張プライム符号系列を使用したDS/SS方式を比較している。その結果、本方式は拡張プライム符号系列を用いるよりも収容ユーザ数を多くすることができることが示されている。また、本方式のビット誤り率性能は拡張プライム符号系列を用いた場合よりも良好であることが示されている。\footnote{茨城大学小澤先生（出身研究室の後輩）の論文。非直交CSKを用いたIM/DD方式のシンボル誤り率の解析式を求める上でかなり参考にした論文。今の所、非直交CSKでは、変形擬直交M系列は用いていないが、\bf{マルチユーザ環境での性能向上を図るためには変形擬直交M系列のように、収容できるユーザ数を向上するための符号構成法について検討する必要}がある。}
+%
+\item N. Ochiai, S. Kushibiki, T. Matsushima, Y. Teramachi, 
+"Performance Analysis of Synchronous Optical CDMA System with EWO signaling," 
+IEICE Trans. Fundamentals, vol.J86-A, no.9, pp957--968, Sept. 2003. \\
+CSKを用いた光CDMA方式に関する論文。CSK/OCDMA方式に関する研究が行われているとして本論文を引用。
+%
+%
+\item C-P. Hsieh, C-Y. Chang, G-C. Yang, W.C. Kwong, 
+"A Bipolar-bipoloar Code for Asynchronous Wevelength-time Optical CDMA," 
+IEEE Trans. Communications, vol.54, no.7, pp.2572--2578, July 2006. \\
+本論文では、波長-時間光CDMAのための拡張バイポーラ符号が提案されている。提案方式は、拡散符号としてゴールド系列を用いる。提案方式は、ハード的な複雑さを増やすことなく、符号数を$N+1$倍にできる。さらに、提案方式の特性は従来方式と非常に近い特性を示す。この点から、提案方式は有効な方式であることが示されている。\footnote{本論文は、シンチレーションやAPD雑音、熱雑音等は考慮していない。ユーザ間干渉のみ考慮している。光無線環境では性能が劣化する恐れもあるが、ユーザ識別のための符号として、本論文で提案されている符号と非直交CSK組み合わせることによって収容できるユーザ数とネットワークスループットが向上するかもしれない。}
+%
+\item S. Takayanagi, H. Habuchi, Y. Kozawa, 
+"Optical-wireless Enhanced Code-shift-keyging with IM/DD," 
+Proc. APCC, 14-PM1-C, Oct. 2015.\\
+本論文では、拡張擬直交M系列を用いる光無線CSKが提案されている。特に、新しい光疑似雑音符号として、拡張擬直交M系列を考案している。拡張擬直交M系列は、擬直交M系列と陪直交符号から構成されている。提案方式は、光疑似雑音系列数の増加により、CSKの性能が向上する。性能解析により、提案方式は従来のCSKよりもビット誤り率特性および情報伝送速度が優れていることが示されている。\footnote{出身研究室の後輩 高柳くんの論文。論文を読んだ限りでは、本研究ではシンチレーションは考慮されていない。シンチレーションがある場合にどのような性能になるのか興味あり。本論文より、符号数を増加することによってビット誤り率と情報伝送速度が改善することがわかった。非直交CSK（シンチレーションあり）のシンボル誤り率は従来のM-ary直交変調方式よりも悪い特性を示す。\bf{これがシンチレーションの影響によるものなのか、それ以外の要因なのか要検討}。非直交CSKは陪直交変調の拡張版と言える。そのため、\bf{本研究と同様に符号の構成を工夫することによって、非直交CSKを用いたIM/DDの性能改善が期待}できる。}
+\end{enumerate}
+
+\end{document}

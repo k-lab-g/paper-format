@@ -1,0 +1,106 @@
+﻿\chapter{性能解析}
+本章では、非直交 CSK を用いた IM/DD 方式のシンボル誤り率および情報伝送効率の
+の理論式を導出する。誤り率特性は1チップ時間にAPDの光入射面から吸収される
+光子数をポアソン分布に従うものとし、APD 出力はガウス近似する。
+また、シンチレーション、背景光、変調消光比、信号光によるショット雑音、
+暗電流によるショット雑音として APD 表面漏れ電流、APD バルク漏れ電流、
+電子回路の熱雑音を考慮し、フレーム同期が取れているものと仮定する。
+本章で用いる記号を表\ref{tbl:notations2}に示す。
+
+%
+\begin{center}
+\begin{table}[hpbt]
+ \caption{本章で用いる記号}
+ \label{tbl:notations2}
+ \begin{center}
+  \begin{tabular}{l|l} \hline
+記号 & 記号の意味 \\ \hline
+$T_c$ & チップ長 \\
+$G$ & 平均APD利得 \\
+$F$ & 過剰雑音指数 \\
+$Me$ & 変調消光比 \\ 
+$\eta$ & 量子効率 \\
+$e$ & 電荷素量 \\
+$\sigma_{th}^2$ & 熱雑音の分散 \\
+$\sigma_s^2$ & シンチレーションの対数分散 \\
+$P_b$ & 背景光電力 \\
+$P_w$ & シンチレーションと背景光の影響を除いた受信光電力 \\
+$h$ & プランク定数 \\
+$\lambda_s$ & 光子の吸収率 \\
+ & ($=\frac{\eta P_w}{hf}$) \\
+$\lambda_b$ & 背景光による光子吸収率 \\
+ & ($=\frac{\eta P_b}{hf}$) \\
+$I_b$ & APDのバルク漏れ電流の平均値 \\
+$I_s$ & APDの表面漏れ電流の平均値 \\ \hline
+  \end{tabular}
+ \end{center}
+\end{table}
+\end{center}
+
+\section{シンボル誤り率}
+1フレームを正しく判定する確率$P_c$は、次式のように表される。
+\begin{align}
+\label{Pc}
+P_c&=\int_{0}^{\infty} P(X) \left[ 1 - \frac{1}{2} \mathrm{erfc} \left( \frac{\mu_0(X)}{\sqrt{2\sigma_0^2 M_{con}}} \right) \right] \times  \big(1-P_{os}(X)\big) dX,
+\end{align}
+ここで、$\mathrm{erfc}(x)$は誤差補関数であり、
+$\mathrm{erfc}(x) = \frac{2}{\sqrt{\pi}} \int_x^{\infty} \exp(-t^2) dt$で
+表される。
+$P(X)$はシンチレーション$X$の確率密度関数であり、
+\begin{align}
+P(X)&=\frac{1}{\sqrt{2\pi \sigma_s^2}X} \exp\left[-\frac{\left(\ln X + \frac{\sigma_s^2}{2} \right)^2}{2\sigma_s^2} \right] \nonumber
+\end{align}
+で表される。対数分散$\sigma_s^2$は大気の状態や伝送距離により決定される。
+$\mu_0(X), \sigma_0^2(X)$は、それぞれ、要素系列の極性に対する平均と分散であり、
+\begin{align}
+\mu_0&=GT_c \left( \frac{L_f}{2} \lambda_s X - \frac{L_f}{2}\frac{\lambda_s X}{Me} \right) \\
+\sigma_0^2&=G^2 FT_c \left[ \frac{L_f+1}{2} \lambda_s X + \frac{L_f^2-1}{2} \frac{\lambda_s X}{Me} + L_f\lambda_b + \frac{2I_b}{e} \right] + \frac{2I_sT_c}{e} + 2\sigma_{th}^2 
+\end{align}
+で表される。
+$P_{os}(X)$は、送信された直交系列の推定を誤る確率である。
+直交系列$x_1$が送信されたとき、$P_{os}(X)$は、次式のように表される。
+%
+\begin{align}
+P_{OS}(k)&=1 - \int_{-\infty}^{\infty} f(x_1) 
+\left[ \int_{-\infty}^{x_1} f(x_{\stackrel{j}{j \neq 1}},X) dx_j \right]^{M_{os}-1} dx_1
+\end{align}
+%
+ここで、 $f(x_j)$は直交系列$x_j$の相関器出力に関する確率密度関数であり、
+\begin{align}
+f(x_j,X)&=\underbrace{g(|q_j|,X) \otimes \cdots \otimes g(|q_j|,X)}_{M_{con}~times},  \\
+g(q_j,X)&=\frac{1}{\sqrt{2 \pi \sigma_{j}^2(X)}} \exp \left[ -\frac{(q_j - \mu_j(X))^2}{\sqrt{2\sigma_{j}^2(X) M_{con}}} \right],
+\end{align}
+%
+で表される。ここで、"$\otimes$"は畳み込み積分を表す。
+$q_j$は$j$番目の相関器の出力であり、$u_j(X), \sigma_{j}^2(X)$はそれぞれ
+$q_j$の平均、分散であり、
+\begin{align}
+\mu_1&=GT_c \left( \frac{L_f+1}{2} \lambda_s X + \frac{L_f-1}{2}\frac{\lambda_s X}{Me} + \lambda_b \right) \\
+\mu_j&=GT_c \left( \frac{L_f \lambda_s X}{Me} + \lambda_b \right) \\
+\sigma_0^2&=G^2 FT_c \left[ \frac{L_f+1}{2} \lambda_s X + \frac{L_f^2-1}{2} \frac{\lambda_s X}{Me} + L_f\lambda_b + \frac{2I_b}{e} \right] + \frac{2I_sT_c}{e} + 2\sigma_{th}^2 
+\end{align}
+で表される。
+
+以上より、シンボル誤り率$P_e$は
+\begin{align}
+\label{Pe}
+P_e&=1-P_c \nonumber \\
+&=1-\int_{0}^{\infty} P(X) \left[ 1 - \frac{1}{2} \mathrm{erfc} \left( \frac{\mu_0(X)}{\sqrt{2\sigma_0^2 M_{con}}} \right) \right] \times  \big(1-P_{os}(X)\big) dX,
+\end{align}
+で表される。
+
+\section{情報伝送効率}
+1チップ時間あたりに受信に成功した情報量を情報伝送効率と定義する。
+提案方式の1フレームあたりに送信できる情報量は$\log_2 M_{os} + M_{con}$ (bit)で
+ある。したがって、
+SIK 方式、M-ary 直交変調方式、提案方式のシンボル誤り率をそれぞれ
+$P_{e_{SIK}}, P_{e_{M-ary}}, P_{e_{Pro}}$、符号長を$L_f$ (chip)、
+CSKで用いる直交符号数を$M_{os}$とすると、
+情報伝送効率$\eta_{D_{SIK}}, 
+\eta_{D_{M-ary}}, \eta_{D_{Non}}$はそれぞれ、次式で表される。
+\begin{align}
+\eta_{D_{SIK}} &= \frac{(1-P_{e_{SIK}})}{L_f}, \nonumber \\
+\eta_{D_{M-ary}} &= \frac{\log_2 M_{os} (1-P_{e_{M-ary}})}{L_f}, \nonumber \\
+\eta_{D_{Non}} &= \frac{(\log_2 M_{os} + M_{con})(1-P_{e_{Pro}})}{L_f} \nonumber \\
+\end{align}
+%

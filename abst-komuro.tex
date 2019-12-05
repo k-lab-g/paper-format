@@ -1,0 +1,139 @@
+﻿\documentclass[a4j,10pt,twocolumn,oneside,notitlepage,fleqn,final]{jarticle}
+%Preamble
+\usepackage{fancyhdr} % ヘッダを変えるために必要
+\usepackage{proc}
+\usepackage{graphicx}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{url}
+\usepackage{color}
+\usepackage{fancybox}
+%\setlength{\topmargin}{-3.0cm} %上の余白を余計にとる
+%\setlength{\oddsidemargin}{0.0cm} %左余白を余計にとる
+%\setlength{\textheight}{25cm}
+%\setlength{\mathindent}{0.1cm} %数式を左寄せにする
+\renewcommand{\baselinestretch}{1.00} % 行間設定　1.0が通常、入らなかったら調整
+%図と本文の調整、狭くしたかったら小さい値を設定
+\setlength\textfloatsep{8pt}
+%
+% ヘッダの設定
+%
+\pagestyle{fancy} % ドキュメント全体
+\renewcommand{\headrulewidth}{0.0pt} % ヘッダの下線を引かない。
+%\lhead{\textgt{\textbf{平成30年度卒業論文概要 (千葉大学工学部情報画像学科 小室研究室)}}}
+%\chead{\textgt{\textbf{平成30年度卒業論文概要 (千葉大学工学部情報画像学科 小室研究室)}}}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\begin{document}
+\twocolumn[
+\begin{center}
+\vspace{-10mm} 
+%\showtitle{\textbf{\Large{IoT・無線センサネットワークの基礎技術とその応用}}}{小室 信喜}{統合情報センター 学術情報部門}
+\textbf{\Large{IoT・無線センサネットワークの基礎技術とその応用}} \\
+\end{center}
+%氏名と学籍番号を右寄せする場合
+\begin{flushright}
+小室 信喜 \\
+統合情報センター・学術情報部門 %学籍番号
+\end{flushright}
+%\hrulefill \\ %タイトルと本文の間に罫線を引く
+]
+\section{はじめに}
+研究室配属の時期が到来した。これまで学んだことを基盤として、
+実際に研究に着手することになる。
+研究すること\footnote{論文にまとめて発表するまで}は
+フルマラソンに似ている\footnote{あくまで個人の見解である}。
+辛い時もあるかもしれないが、研究室のメンバーで切磋琢磨しゴールを目指す。
+ゴールした時には筆舌に尽くしがたい達成感がある。
+
+当研究室は、真のユビキタス社会を実現すべく、試行錯誤し
+情報通信の研究に勤しんでいる。
+本稿では、当研究室の概要を紹介する。
+
+\section{研究内容}
+通信機能を備えたさまざまなモノを接続し、モノとモノ、
+人とモノとの間で自律的に情報のやり取りを実現するというIoT
+Internet of Things) およびその周辺技術の開発が加速している\cite{iot}。
+我が国における科学技術政策としてSociety 5.0が提唱されており\cite{society5}、
+国内外において、IoTや人工知能を核とした新たな技術分野の創出や市場の拡大、
+それに伴う技術開発の重要性が高まっている。
+%IoTは、環境・農業、防犯・防災、構造物センシングなどさまざまな分野での利用が
+%検討されている\cite{iot}。
+
+
+当研究室では、IoTを用いたシステムの開発・構築、
+無線センサネットワークの高度化に関する研究を行っている。
+主として、「IoTを用いた環境モニタリングシステムの開発」
+「無線センサネットワークの設計」 について研究している。
+IoTを用いた環境データモニタリングシステムの概略図を図\ref{fig:example1}に示す。
+本研究では、環境データ取得センサの開発、
+環境データ収集システムの構築、収集データの解析・環境状況の予測などを行う。
+無線センサネットワークの設計に関する概略図を図\ref{fig:example2}に
+示す。本研究では、IoTを用いたシステムからの
+要求に応じた通信性能を提供する無線センサネットワークを設計・構築する。
+
+\begin{figure}[th]
+\includegraphics[width=0.48\textwidth]{data-collection.eps}
+\caption{IoTを用いた環境データ収集システム}
+\label{fig:data-collection}
+\end{figure}
+
+\begin{figure}[th]
+\includegraphics[width=0.48\textwidth]{wsn.eps}
+\caption{無線センサネットワークの設計}
+\label{fig:wsn}
+\end{figure}
+
+\section{研究室について}
+\begin{itemize}
+\setlength{\itemsep}{-1mm}
+\item 研究室の活動\\
+\item 研究室の活動\\
+平成30年度の構成は、教員が1名、B4が3名(2名が院進)である。
+%方針は「研究室生活を楽しむ」である。
+前期は輪講形式で勉強(通信の基礎、英文論文)し、後期以降本格的に研究に
+打ち込む。研究成果は国際会議や論文を通じて対外発表する\footnote{ここが
+ゴール}。
+雰囲気は百聞不如一見、見学して確認されたい。
+\item 研究室説明会\\
+日時：1/10(木)、1/17(木)、1/24(木) 18時\footnote{白木研と合同で実施する}\\
+場所：共用機器センター3階ゼミ室\footnote{アクセスは
+石山研、白木研の資料を参照されたい}
+\end{itemize}
+
+\if0
+\begin{figure}[bth]
+\includegraphics[width=0.50\textwidth]{example1.eps}
+\caption{IoTを用いた環境データ収集システム}
+\label{fig:example1}
+\end{figure}
+
+\begin{figure}[tbh]
+\includegraphics[width=0.50\textwidth]{example2.eps}
+\caption{IoTネットワークの設計}
+\label{fig:example2}
+\end{figure}
+\fi
+
+\section{おわりに}
+本稿では、小室研究室について紹介した。 研究室を決める際は研究内容だけではなく、
+研究室の先生や先輩の雰囲気・印象、相性も考慮されたい。伝聞で判断せず、
+色々な研究室を巡り、自分で見て判断することを勧める。
+「当初は興味なかったが、見学してみたら自分に合ってそうだ」など
+新たな発見があるかもしれない。
+
+\small{
+\begin{thebibliography}{9}%{}
+\setlength{\itemsep}{-1mm}
+\bibitem{iot} I. Yaqoob et al., 
+"Internet of Things Architecture: Recent Advances, Taxonomy, Requirements, 
+and Open Challenges," IEEE Wireless Communications, vol.24, no.3, pp.10--16, 
+June 2017.
+\bibitem{society5} "Society 5.0 -- 科学技術政策 --,"
+\url{http://www8.cao.go.jp/cstp/society5_0/index.html} (平成30年11月30日閲覧)
+\end{thebibliography}
+}
+\end{document}

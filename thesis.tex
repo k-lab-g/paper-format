@@ -1,0 +1,114 @@
+\documentclass[11pt,oneside]{jreport} %もしくは，jbook
+
+%%% 共通パッケージの読み込み(Required)
+\usepackage{graphicx}  % 図の貼込みを可能にする．
+%\usepackage{overcite}  % 引用文献番号を右肩に上げる．
+\usepackage{amsthesis} % 知能情報コース修論スタイル
+\usepackage{amsmath}
+
+%%% オプションパッケージの読込み(Optional)
+%\usepackage{here} % 図，表をその位置に貼る．
+\usepackage{fancybox} % ボックスの拡張
+\usepackage{txfonts}  % TXフォント使用
+
+%%% 修士論文題目等(Required)
+\title{\textbf{非直交符号シフトキーイングを用いた光強度変調方式に関する研究}} % ここに論文題目を書く．
+\gakuseki{学籍番号}
+\date{平成30年2月8日}           % ここに提出日を書く．
+\laboratory{小室研究室} % ここに研究室名を書く．(amsthesis only)
+\author{小室 信喜}               % ここに氏名を書く．
+
+%%% 各自の定義(Optional)
+% ここに個人の定義を書く．
+% \def\baselinestretch{1.2} % 改行幅を一律既定値の20％にする．
+%\usepackage{amsmath}
+
+%%% Jpeg ファイルを読み込むための仕様
+%\DeclareGraphicsRule{.jpeg}{eps}{.bb}% 
+%{`djpeg -pnm #1 | pnmtops} 
+
+%%% PDF ファイルのためのポストスクリプトフォントの使用
+%\usepackage[T1]{fontenc}
+%\usepackage{times}
+%\usepackage{mathptm}
+
+
+
+%%% PDF ファイルのための設定
+ \usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc]{hyperref}
+ \hypersetup{a4paper=true,pdfpagemode=None,pdfstartview=FitH}
+ \hypersetup{%
+   pdftitle={}
+   pdfsubject={},
+   pdfauthor={},
+   pdfkeywords={}
+ }
+
+%%% 目次をどこまで出すか(選択)
+%\setcounter{tocdepth}{0} % 章まで
+%\setcounter{tocdepth}{1} % 節まで
+\setcounter{tocdepth}{2} % 項まで
+
+%%% 図，表のキャプションを日本語とするか欧文とするか(選択)
+\makeatletter
+%\def\fnum@figure{Fig. \thefigure}
+%\def\fnum@table{Table \thetable}
+\def\fnum@figure{図\thefigure}
+\def\fnum@table{表\thetable}
+\makeatletter
+
+\renewcommand{\baselinestretch}{1.0} % % 行間設定　1.0が通常、入らなかったら調整
+%図と本文の調整、狭くしたかったら小さい値を設定
+
+
+\begin{document}
+
+%%% 表紙(Required)
+\maketitle
+
+
+
+%%% 概要(Required)
+% 卒論では不要
+%\begin{abstract} % (amsthesis only)
+%\vspace{5mm}
+%\end{abstract} %(amsthesis only)
+
+%%% 目次(Required)
+\tableofcontents
+
+% 図目次
+\listoffigures
+
+% 表目次
+\listoftables
+\newpage
+\setcounter{page}{1}%
+
+%%% 本文(Required)
+\input{introduction}
+\input{related}
+\input{system}
+\input{analysis}
+\input{evaluation}
+\input{conclusion}
+\input{reference}
+
+%%% 謝辞
+\acknowledgement
+本研究を進めるするにあたり、貴重なご指導とご助言をくださいました
+茨城大学工学部情報工学科教授 羽渕裕真先生、
+茨城大学工学部情報工学科助教 小澤佑介先生に心より感謝いたします。
+また、著者が研究を行う際にご協力を下さいました
+千葉大学統合情報センター准教授 白木厚司先生、
+千葉大学工学部情報画像学科小室研究室の学生諸氏、
+千葉大学工学部情報画像学科白木研究室の学生諸氏、
+茨城大学工学部情報工学科 羽渕研究室の学生諸氏、
+研究を行うにあたり様々なご支援、ご協力を下さいました方々に
+深く感謝の意を表します。
+\begin{flushright}
+  平成30年2月8日 小室 信喜
+\end{flushright}
+
+\end{document}
+

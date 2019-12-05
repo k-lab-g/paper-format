@@ -1,0 +1,247 @@
+﻿\documentclass[a4j,10pt]{jarticle}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{246mm}
+\setlength{\oddsidemargin}{-0.4mm}
+\setlength{\evensidemargin}{-0.4mm}
+\setlength{\topmargin}{-5.4mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\footskip}{5mm}
+\begin{document}
+\begin{center}
+\large
+研究メモ
+\end{center}
+\begin{flushright}
+小室 信喜 \\
+千葉大学統合情報センター
+\end{flushright}
+\hrulefill \\
+\section{A: 研究テーマは何ですか?} %%% 研究の主題を書く
+%
+\begin{description}
+\item[和文] 非直交符号シフトキーイングを用いた光強度変調方式に関する研究
+\item[英文] Intensity Modulation Direct Detection with Nonorthogonal Code Shift Keyging Scheme
+\end{description}
+%
+\section{B: なぜその研究テーマを選んだのですか?}
+\subsection{B1: 背景} %%% その研究テーマを選んだ理由を書く。
+\begin{description}
+ \item[和文] 近年、車車間通信や海中通信、ホームネットワークへの応用が期待できる情報通信方式として、光無線通信が着目されている\cite{ocdma1}-\cite{csk2}。光無線通信サービスの普及に向けたさまざまな標準化活動、光無線通信の高度化および実用化に関する研究が行われており、光強度変調/直接検波 (IM/DD: Intensity Modulation Direct Detection) が実用的な光無線通信方式として検討されている。光強度変調方式では、光変復調法\cite{ocdma4}-\cite{scinti}、光無線通信路のモデル化\cite{ocdma5}、疑似雑音系列を用いたIM/DD方式の情報変調法\cite{ook}-\cite{sik2}、などが検討されている。
+%
+\item[英文] Recently, optical wireless communications are of interest for various applications, such as intelligent transport systems, under water communications, and future home networks. Intensity Modulation and Direct Detection (IM/DD) optical wireless communication systems have been investigated as practical optical wireless communications. Various methods, such as the optical modulation and de-modulation system \cite{ocdma4}-\cite{scinti}, modeling of optical wireless channel \cite{ocdma5}, and information modulation system in IM/DD optical wireless communication system with pseudo-noise (PN) sequences, have been investigated. 
+\end{description}
+%
+\subsection{B2: 従来の研究内容} %%% その研究テーマに関連してこれまでに行われた研究を書く
+\begin{description}
+ \item[和文]  IM/DD方式の情報変調方式として、オンオフキーイング (OOK: On-off Keying) 方式\cite{ook}\cite{scinti}やシーケンスインバージョン (SIK: Sequence Inversion Keyging)方式\cite{sik1}\cite{sik2}が検討されている。OOK方式は、送信データ"0"を送信する場合は疑似雑音系列を発生させず、送信データ"1"を送信する場合は疑似雑音系列を発生させ送信する方式である。OOK方式は、光強度の減衰が少ない光ファイバ通信では実用的な方式であるが、光無線通信方式では、シンチレーションが生じるため\cite{scinti}、動的に理想的なしきい値を設定することが困難である。SIK方式は直交する2つの疑似雑音系列を用い、情報に応じて送信符号を切り替える方式である。SIK方式は受信機でのしきい値判定を必要とせず、OOK方式と同じ情報伝送効率を達成することができるため、光無線通信に適した方式である。しかし1つの拡散系列あたり1ビットのデータを送信するため、情報伝送効率の向上が課題である。
+%
+ \item[英文] The On-off Keying (OOK) system \cite{ook}\cite{scinti} and the Sequence Inversion Keying (SIK) \cite{sik1}\cite{sik2} have been investigated as information modulation schemes in IM/DD systems. In the OOK system, a PN sequence is transmitted as transmission data '1', and no PN sequence is transmitted as transmission data '0'. The OOK system is useful in optical fiber communication. It is, however, difficult to set the ideal threshold in optical wireless communication because of the scintillation. The SIK system uses two PN sequences. The SIK system selects one PN sequence according to transmission data. The SIK system achieves the same symbol error rate performance as the OOK system without a threshold. The SIK system is suitable for the IM/DD optical wireless communication. Snce the SIK system transmits one bit per sequence, the data transmission efficiency of the SIK system is low. One of the issues encountered with the IM/DD optical wireless communication is to increase the data transmission efficiency. 
+\end{description}
+%
+\subsection{B3: 従来での未解明点} %%% その研究テーマに関連してこれまでに行われた研究における未解明点を書く
+\begin{description}
+ \item[和文] 文献\cite{csk1}\cite{csk2}では、情報伝送効率の向上を図る情報変調として、M-ary 直交変調方式が検討されている。M-ary 直交変調方式は、伝送するデータに応じて$M$個の直交系列の中から1つの系列を選択し、送信する方式である。M-ary 直交変調方式は、直交系列数$M$を増加することによって、系列あたりの情報量が増加する。しかし、系列数を増加させるには系列長を長く必要があるため、情報伝送効率の低下をまねくという点に問題がある。
+%
+ \item[英文] In the method of the literature \cite{csk1}\cite{csk2}, the M-ary orthogonal modulation scheme is investigated for increasing the data transmission efficiency. In the M-ary Orthogonal modulation scheme, one of $M$ orthogonal sequence is selected according to the transmission data. In the M-ary orthogonal modulation scheme, increasing the number of othogonal sequences $M$ improves the amount of information per sequence. Since long sequences are neccesary to increase $M$, the increase of $M$ induce the decrease of data transmission efficiency. 
+\end{description}
+%
+\subsection{B4: 目的} %%% その研究テーマを選んだ目的を書く
+\begin{description}
+ \item[和文] 本研究の目的は、光無線通信において情報伝送効率を向上することである。IM/DDにおける情報伝送効率向上法として、非直交 CSK を用いた光強度変調方式を提案する。特に、CSK で用いる非直交系列をシステマチックに構成する方法を提案する。CSK で用いる系列として非直交系列を用いることによって、
+系列長を長くせずに情報変調に用いる系列数を増やすことができるため、情報伝送効率の向上が期待できる。
+シンチレーションが存在する環境下において、提案方式の情報伝送効率の理論式を導出し、提案方式の有効性を示す。
+%
+ \item[英文] The purpose of this study is to improve the data transmission efficiency in optical wireless communications. We propose the IM/DD optical wireless communication system with the nonorthogonal Code Shift Keying (CSK). In particular, we propose a scheme to construct nonorthogonal sequences systematically. It is extected that the proposed scheme improves the data transmission rate because the proposed system increases the number of sequences without lengthening PN seqences. We analyze the data transmission efficiency of the proposed scheme. Numerical results show the effectiveness of the proposed scheme. 
+\end{description}
+%
+\section{C: どのような手段を使ってその研究を行いましたか?}
+\subsection{C1: 使用した手段(簡潔)} %%% その目的を実現するために使用した手段を簡潔に書く
+\begin{description}
+ \item[和文] 本方式では、直交系列を複数個連接することにより、非直交系列を構成する。伝送するデータに応じて非直交系列の中から1つの系列を選択し、選択した系列を送信する。
+%
+ \item[英文] In the proposed scheme, nonorthogonal sequences are created by concatenating $M_{con}$ orthogonal sequences. One of nonorthogonal sequences is selected according to the transmission data, and transmitted to the receiver. 
+\end{description}
+%
+\subsection{C2: 使用した手段(詳細)} %%% その目的を実現するために使用した手段を詳細に書く
+\begin{description}
+ \item[和文] 送信側では、まず、送信データ ($N_{bit}$(bit) の情報)を$\log_2 M_{os}$ (bit)と$M_{con}$ (bit)に分割する。$\log_2 M_{os}$ (bit)のデータに基づいて$M_{os}$個の直交系列の中から1つの系列を選択する。次に、$M_{con}$ (bit)の極性に応じて、選択した直交系列を連接する。最後に、構成された連接系列を送信する。
+
+受信側では送信側で用いる直交系列と同じ系列を用いる。受信信号をチップ間隔ごとにAvalanche Photo Diode (APD)を用いて光電変換する。光電変換した電気信号は、要素系列毎に各直交系列$OS_{j}~~(j=1,2, \cdots, M_{os})$との相関を取る。各直交系列の相関値の絶対値の和を求め、その値が最も大きくなる系列を、
+送信された系列の要素系列であると判断する。また、相関器出力の正負から連接系列の極性を判定し、データを復調する。
+
+この方式の情報伝送効率の理論式を導出した。以下の点から提案方式の有効性を評価した。
+\begin{enumerate}
+ \item 連接数に対する情報伝送効率（1ビットあたりの受信光パワーを統一）
+ \item 従来方式（SIK方式、M-ary直交変調方式）との比較
+\end{enumerate}
+%
+ \item[英文] Transmitter converts source data into $\log_2 M_{os} + M_{con}$ (bit). One of $M_{os}$ orthogonal sequences is selected according to $\log_2 M_{os}$ (bit) data. The transmitter modulates the selected orthogonal sequence according to the polarity of $M_{con}$ (bit) data. The transmitter transmits the modulcated sequence. 
+
+The reciever has the same sequences set as the transmitter. The reciever obtains the electric signal by chip-level Avalanche Photo Diode (APD). The receiver demodulates $\log_2 M_{os}$ (bit) data by correlating the obtained signal with each orthogonal sequence. The receiver determines $M_{con}$ (bit) data from the correlator output of the demodulated orthogonal sequence. 
+
+We analytically derive the data transmission efficiency. We evaluate the effeictiveness of the proposed scheme. In particular, we evaluate the data transmission efficiency versus the number of concatenations. We also compare the proposed scheme with conventional schemes, which are the SIK scheme and the M-ary orthogonal modulation scheme. 
+%
+\end{description}
+%
+\section{D: どのようなデータがその研究結果として得られましたか?}
+\subsection{D1: 得られた事実(簡潔)} %%% その使用した手段により得られた事実を簡潔に書く
+\begin{description} 
+ \item[和文] 本研究では、非直交CSKを用いたIM/DD方式を提案し、その理論解析を行った。その結果、提案方式は情報伝送速度を向上できることがわかった。
+
+%
+ \item[英文] We proposed the IM/DD optical wireless communication systems with nonorthogonal sequences. Consequently, we found that the proposed scheme achieves improves data transmission efficiency. 
+
+\end{description}
+%
+\subsection{D2: 得られた事実(詳細)} %%% その使用した手段により得られた事実を詳細に書く
+\begin{description}
+ \item[和文] 提案方式において、連接数に対する情報伝送効率を評価した（図\ref{fig:graph-proposal-efficiency}参照）。その結果、連接数によって情報伝送速度が変わることがわかった。また、情報伝送効率を最大にする連接数の最適値が存在することがわかった。
+
+SIK方式、M-ary直交変調方式および提案方式の情報伝送速度を評価した（図\ref{fig:graph-cmp-efficiency}参照）。その結果、提案方式(直交符号数=8、連接数=4)の情報伝送効率はが最も高いことがわかった。このことから、情報伝送効率の関して、符号間干渉の影響よりも1フレームあたりに使用する系列数増加による効果のほうが高いことがわかった。
+
+%SIK方式、M-ary直交変調方式および提案方式のシンボル誤り率を評価した。その結果、提案方式のシンボル誤り率はM-ary直交変調方式とSIK方式の中間であることがわかった。提案方式は、符号間干渉が0ではない系列も使用しており、その誤り率の影響を受けるため、M-ary直交変調よりもビット誤り率特性が低下する。
+% （メモ）シンボル誤り率はM-ary直交変調より悪くなるが、情報伝送効率は提案方式が最も良いことがわかったので、本論文では、情報伝送効率向上法を目的とする。シンボル誤り率については、議論しないこととする。
+%
+ \item[英文] We evaluated the data transmission efficiency of the proposed scheme versus the number of concatenations, as shown in Fig. \ref{fig:graph-proposal-efficiency}. Consequently, we found that the proposed scheme has an optimum concatenation number, which maximizes the data transmission rate. 
+
+We also compared the proposed scheme with the SIK scheme and the M-ary orthogonal modulation scheme, as shown in Fig. \ref{fig:graph-cmp-efficiency}. Consequently, we found that the data transmission effieiency of the proposed scheme is higher than those of the SIK scheme and the M-ary orthogonal modulation scheme, which shows that the effect of increasing the number of seqences is higher than the influence of the inter symbol interference.
+ \begin{itemize}
+%  \item The proposed scheme achieves better symbol error rate performance than the SIK scheme. However, the symbol error rate of the proposed scheme is worse than that of the M-ary orthogonal modulation scheme. 
+ \item The proposed scheme has an optimum concatenation number, which maximize the data transmission rate. 
+ \item The proposed scheme achieves higher data transmission effieicy than the SIK scheme and the M-ary orthogonal modulation scheme. 
+ \end{itemize}
+%
+\end{description}
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{graph-pro-efficiency.eps}
+\caption{提案方式の連接数に対する情報伝送効率 
+($M_{os} = 8, P_{b}=-57.0$ (dBm))}
+\label{fig:graph-proposal-efficiency}
+\end{center}
+\end{figure}
+%
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{graph-cmp-efficiency.eps}
+\caption{SIK方式、M-ary直交変調方式、提案方式の情報伝送効率
+($L_{f} = 32$)}
+\label{fig:graph-cmp-efficiency}
+\end{center}
+\end{figure}
+%
+\section{E: どのように従来及び今回の研究結果が対比されましたか?} %%% 従来の研究結果と今回得られた結果を比較する
+\begin{description} 
+ \item[和文] 従来のIM/DD光無線通信では情報伝送効率の向上が課題であった。数値結果より、提案方式は従来方式よりも情報伝送速度を向上できることがわかった。
+ \item[英文] One of the issues encountered with the IM/DD optical wireless communication is to increase the data transmission efficiency. From the numerical results, we found that the proposed scheme achieves higher data transmission efficiency than conventional schemes. 
+\end{description}
+%
+\section{F: どのような結論が得られましたか?}
+\subsection{F1: 得られた結論(簡潔)} %%% データを論理的に分析して得られた結論を簡潔に書く
+\begin{description}
+ \item[和文] 非直交 CSK を用いた IM/DD 方式は光無線通信における情報伝送効率向上法として有効な方式である。
+%
+ \item[英文] The proposed scheme is effective in the optical wireless communications. 
+\end{description}
+%
+\subsection{F2: 得られた結論(詳細)} %%% データを論理的に分析して得られた結論を詳細に書く
+\begin{description}
+ \item[和文] 結論として，今回得られた事柄を以下に列挙する．
+\begin{itemize}
+% \item M-ary 直交変調方式のシンボル誤り率が最も良い
+ \item 提案方式は情報伝送効率を最大化する、連接数の最適値が存在する
+ \item 通信環境にかかわらず提案方式の情報伝送効率が最も良い
+\end{itemize}
+%
+ \item[英文] In conclusion, we have obtained the following results:
+ \begin{itemize}
+%  \item The proposed scheme achieves better symbol error rate performance than the SIK scheme. However, the symbol error rate of the proposed scheme is worse than that of the M-ary orthogonal modulation scheme. 
+ \item The proposed scheme has an optimum concatenation number, which maximize the data transmission rate. 
+ \item The proposed scheme achieves higher data transmission effieicy than the SIK scheme and the M-ary orthogonal modulation scheme. 
+ \end{itemize}
+\end{description}
+%
+\section{G: 今回の研究から浮かびあがった今後の課題がありましたか?} %%% 浮かび上がった問題点を今後の課題として提案する。
+\begin{description} 
+ \item[和文] 今後の課題として、
+\begin{itemize}
+ \item 提案方式における連接数の最適値に関する検討
+ \item 提案方式におけるシンボル誤り率低減法に関する検討
+ \item 情報伝送効率のさらなる向上法に関する検討
+ \item 情報変調の階層化に関する検討
+ \item 多元接続干渉を考慮した性能解析
+\end{itemize}
+を行う必要がある。
+%
+ \item[英文] Future works include the below investigations:
+% In future, we should evaluate the performance in the condition which is close to the real environment: 
+ \begin{itemize}
+  \item Optimum concatenation number 
+  \item Reduction of the symbol error rate of the proposed scheme 
+  \item Futher improvement method of the data transmission efficiency 
+  \item Layered information modulation 
+  \item Analysis in consideration of the multiple access interference
+ \end{itemize}
+\end{description}
+%
+\begin{thebibliography}{99} %%% 参考文献
+\bibitem{ocdma1} H.M. Kwon, "Optical Orthogonal Code-division Multiple-access 
+system -- Part I: APD Noise and Thermal Noise," IEEE Trans. Communications,
+vol.42, no.7, pp.2470--2479, July 1994. 
+%
+\bibitem{ocdma2} Y. Qiu, S. Chen, H.H. Chen, W. Meng, 
+"Visible Light Communication based on CDMA Technology," IEEE Wireless Communications, 
+vol.25, no.2, pp.178--185, Apr. 2018.
+%
+\bibitem{ocdma3} M.Y. Liu, T.L. Wang, S.M. Tseng, 
+"Throughput Performance Analysis of Ascynchronous Optical CDMA Networks 
+with Channel Load Sensing Protocol," IEEE Photonics Journal, 
+vol.9, no.3, June 2017.
+%
+\bibitem{ocdma4} S.H. Chen, C.W. Chow, 
+"Color-shift Keying Code-division Multiple-access Transmission for 
+RGB-LED Visible Light Communications using Mobile Phone Camera," 
+IEEE Photonics Journal, vol.7, no.6., Dec. 2014. 
+%
+\bibitem{ocdma5} K. Kiasaleh, 
+"Performance of APD-based, PPM Free-space Optical Communication Systems in Atmospheric Turbulence," 
+IEEE Trans. Communications, vol.53, no.9, pp.1455--1461, Sept. 2005. 
+%
+\bibitem{scinti} X. Zhu, J.M. Kahn, 
+"Free-space Optical Comuunication through Atmospheric Turbulence Channels," 
+IEEE Trans. Communications, vol.50, no.8, pp.1293--1300, Aug. 2002.
+%
+%
+\bibitem{ocdma6} M. Hadi, M.R. Pakravan, 
+"Analysis and Design of Adaptive OCDMA Passive Optical Networks," 
+Journal of Lightwave Technology, vol.35, no.14, pp.2853--2863, 2017. 
+%
+\bibitem{ook} J. Li, M. Uysal,  
+"Optical Wireless Communications: System Model, Capacity and Coding," 
+Proc. IEEE VTC, vol.1, pp.168--172, Oct. 2003. 
+%
+\bibitem{sik1} T. Yamashita, M. Hanawa, Y. Tanaka, M. Takahara, 
+"An Optical Code Division Multiplexing System using Hadamard Codes and SIK," 
+IEICE Technical Report, OCS98-1, May 1998. 
+%
+\bibitem{sik2} Y. Kozawa, H. Habuchi, 
+"Theoretical Ananlysis of Atomospheric Optical DS/SS with On-off Orthogonal 
+M-sequence Pairs," Proc. ICICS, P0686, Dec. 2007. 
+%
+\bibitem{csk1} N. Ochiai, S. Kushibiki, T. Matsushima, Y. Teramachi, 
+"Performance Analysis of Synchronous Optical CDMA System with EWO signaling," 
+IEICE Trans. Fundamentals, vol.J86-A, no.9, pp957--968, Sept. 2003. 
+%
+%
+\bibitem{csk} C-P. Hsieh, C-Y. Chang, G-C. Yang, W.C. Kwong, 
+"A Bipolar-bipoloar Code for Asynchronous Wevelength-time Optical CDMA," 
+IEEE Trans. Communications, vol.54, no.7, pp.2572--2578, July 2006. 
+%
+\bibitem{csk2} S. Takayanagi, H. Habuchi, Y. Kozawa, 
+"Optical-wireless Enhanced Code-shift-keyging with IM/DD," 
+Proc. APCC, 14-PM1-C, Oct. 2015.
+\end{thebibliography}
+\end{document}

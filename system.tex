@@ -1,0 +1,102 @@
+﻿\chapter{提案システムの構成}
+
+\section{非直交系列構成法}
+図\ref{fig:structure}に非直交系列の構成を示す。
+本方式では、直交系列を$M_{con}$個連接することにより、非直交系列を構成する。
+直交系列を$M_{con}$個連接することにより構成された系列を
+1フレームとする。直交系列 \#$i$から構成される非直交系列のグループを
+グループ\#$i$とする。提案方式において構成される系列は、
+異なるグループの系列とは直交しているが、
+同じグループの系列は非直交である。1つの直交系列から $2^{M_{con}}$個の
+非直交系列が構成される。したがって、$M_{os}$個の直交系列からは、
+$2^{M_{con}} M_{os}(=M_{non})$個の非直交系列が構成される。また、
+1非直交系列当たりの情報ビット数は
+$N_{bit} = \log_2 M_{os} + M_{con}$[bit] である。
+直交系列を長 $L_{os}$ とすると、フレーム長$L_f$は $M_{con} \times L_{os}$ となる。
+%
+%
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.75\textwidth]{sequence.eps}
+\caption{非直交系列の構成}
+\label{fig:structure}
+\end{center}
+\end{figure}
+%
+
+\section{送受信機}
+図\ref{fig:model}に本方式の送受信機の構成を示す。
+送信側では、まず、送信データ ($N_{bit}$(bit) の情報)を
+$\log_2 M_{os}$ (bit)と$M_{con}$ (bit)に分割する。
+$\log_2 M_{os}$ (bit)のデータに基づいて$M_{os}$個の直交系列の中から
+1つの系列を選択する。次に、$M_{con}$ (bit)の極性に応じて、選択した直交系列を連接する。
+最後に、構成された連接系列を送信する。
+%
+
+受信側では送信側で用いる直交系列と同じ系列を用いる。
+受信信号をチップ間隔ごとにAvalanche Photo Diode (APD)を用いて光電変換する。光電変換した電気信号は、
+要素系列毎に各直交系列$OS_{j}~~(j=1,2, \cdots, M_{os})$との相関を取る。
+各直交系列の相関値の絶対値の和を求め、その値が最も大きくなる系列を、
+送信された系列の要素系列であると判断する。また、相関器出力の正負から
+連接系列の極性を判定し、データを復調する。
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=1.0\textwidth]{system.eps}
+\caption{提案方式のシステムモデル}
+\label{fig:model}
+\end{center}
+\end{figure}
+%
+%
+
+\section{非直交系列の構成例}
+図\ref{fig:example}は、本方式における非直交系列の構成の例である。
+図\ref{fig:example}では。直交系列を3個連接することによって、非直交系列が構成
+されている。もととなる直交系列と
+$(+,+,+)$, $(+,+,-)$, $(+,-,+)$, $(+,-,-)$, $(-,+,+)$,
+$(-,+,-)$, $(-,-,+)$, $(-,-,-)$
+を乗算することで、構成される。
+したがって、1つの直交系列から$8 (=2^3)$個の非直交系列が構成される。
+連接数を$M_{con}$としたとき、1つの直交系列から$2^{M_{con}}$個の非直交系列が
+構成される。直交系列長および直交系列数を$M_{os}$としたとき、
+フレーム長は$M_{con} \times M_{os}$であり、非直交系列数$M_{non}$は
+$M_{os} 2^{M_{con}}$である。
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{seq-ex.eps}
+  \caption{非直交系列の例}
+\label{fig:example}
+\end{center}
+\end{figure}
+%
+
+\section{非直交系列の相互相関値の比較}
+表\ref{tbl:correlation}に、
+提案方式および M-ary 直交変調方式の相互相関値を示す。
+表\ref{tbl:correlation}において、$M_{con}=3$であり、相関値は、
+フレーム長で正規化する。本方式における相関値は
+$\{1, \frac{1}{3}, 0, -\frac{1}{3}, -1 \}$であり、相関値が0となる系列数は、
+$8(M_{os} -1)$である。M-ary/SS 型アロハ方式において、相関値は$\{1, 0\}$であり、
+相関値が0となる系列数は$(M_{os} -1)$である。また、M系列を用いた
+CSK 型アロハ方式において、相関値は$\{1, 0, -\frac{1}{3} \}$であり、
+相関値が0となる系列数は$4(M_{os} -1)$である。相関値が0となる系列数は本方式が
+もっとも多い。
+\begin{center}
+\begin{table}[hpbt]
+ \caption{相互相関値}
+ \label{tbl:correlation}
+ \begin{center}
+  \begin{tabular}{l|c|c} \hline
+   \texttt{System} & Correlation value & Num. of seq.\\ \hline
+   \texttt{提案方式} & $1$ & $1$ \\
+   \texttt{$(M_{con}=3)$} & $\frac{1}{3}$ & $3$ \\
+   \texttt{} & $0$ & $8(M_{os} -1)$ \\
+   \texttt{} & $-\frac{1}{3}$ & $3$ \\
+   \texttt{} & $-1$ & $1$ \\ \hline
+   \texttt{M-ary 直交変調方式} & $1$ & $1$ \\
+   \texttt{} & $0$ & $M_{os}-1$ \\ \hline
+  \end{tabular}
+ \end{center}
+\end{table}
+\end{center}
+

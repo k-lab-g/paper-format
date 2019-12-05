@@ -1,0 +1,108 @@
+﻿\chapter{性能評価}
+本章では、
+SIK方式、直交CSK方式および提案方式のシンボル誤り率および情報伝送効率を
+評価する。数値諸元を表\ref{tbl:parameters}に示す。
+\begin{center}
+\begin{table}[hpbt]
+ \caption{数値諸元}
+ \label{tbl:parameters}
+ \begin{center}
+  \begin{tabular}{l|l|l} \hline
+名前 & 記号 & 値 \\ \hline
+レーザ波長 & $f$ & 830 (nm) \\
+チップ長 & $T_c$ & $4.0 \times 10^{-4}$ ($\mu$sec)\\
+平均APD利得 & $G$ & 100 \\
+背景光電力 & $ P_b$ & -45.0 (dBm) \\
+APDのバルク漏れ電流の平均値 & $I_b$ & 0.1 (nA) \\
+APDの表面漏れ電流の平均値 & $I_s$ & 10 (nA) \\
+変調消光比 & $Me$ & 100 \\ 
+受信機における雑音温度 & $T_r$ & 1100 (K) \\
+負荷抵抗 & $R_L$ & 1030 ($\Omega$) \\
+シンチレーションの対数分散 & $\sigma_s^2$ & 0.1 \\
+電荷素量 & $e$ & $1.6 \time 10^{-19}$ (C)\\
+量子効率 & $\eta$ & 0.6 \\
+有効電離率 & $k_{eff}$ & 0.02 \\ \hline
+  \end{tabular}
+ \end{center}
+\end{table}
+\end{center}
+
+図\ref{fig:graph-proposal-ser}に、
+図\ref{fig:graph-cmp-ser}に、$M_{os}=32$、
+1ビットあたりの受信光パワー$P_b=-57.0$ (dBm) としたときの
+提案方式の連接数に対するシンボル誤り率を示す。
+図より、連接数を増加するに従いシンボル誤り率特性が改善することがわかる。
+これは、連接数の増加に伴いフレーム長が増加し、1シンボルあたりの
+受信エネルギーが増加するためである。
+%
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{graph-pro-ser.eps}
+\caption{提案方式の連接数に対するシンボル誤り率
+($M_{os} = 8, P_{b}=-57.0$ (dBm))}
+\label{fig:graph-proposal-ser}
+\end{center}
+\end{figure}
+%
+
+図\ref{fig:graph-cmp-ser}に、$M_{os}=32$、
+1ビットあたりの受信光パワー$P_b=-57.0$ (dBm) としたときの
+提案方式の連接数に対する情報伝送効率を示す。
+情報伝送効率は連接数によって変化し、連接数の最適値が存在することがわかる。
+直交系列数および直交系列長を固定し連接数を変化させた場合、\\
+(1) フレーム長の増加によるビット誤り率特性の改善\\
+(2) 使用する系列数の増加による情報ビット数の増加\\
+(3) 1チップ時間あたりの情報ビット数の減少\\
+(1)(2)と(3)の間にトレードオフが存在する。このことから、
+提案方式には連接数の最適値が存在するものと考えられる。
+連接雨の最適値についてはより詳しく検討する必要がある。
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{graph-pro-efficiency.eps}
+\caption{提案方式の連接数に対する情報伝送効率 
+($M_{os} = 8, P_{b}=-57.0$ (dBm))}
+\label{fig:graph-proposal-efficiency}
+\end{center}
+\end{figure}
+%
+
+図\ref{fig:graph-cmp-ser}に、$L_{f}=32$ (chip)としたときの
+1ビットあたりの受信光パワーに対するシンボル誤り率を示す。
+M-ary直交変調方式で用いる直交系列数を32、提案方式では、
+$(M_{os}=8,~M_{con}=4),~(M_{os}=32,~M_{con}=1)$とする。
+$(M_{os}=32~,M_{con}=1)$は陪直交変調方式と同じである。
+図より、受信光パワーが高い時、M-ary直交変調方式が最も良シンボル誤り率特性を
+示すことがわかる。
+提案方式のシンボル誤り率はM-ary直交変調方式とSIK方式の中間であることがわかる。
+提案方式は、符号間干渉が0ではない系列も使用しており、
+その誤り率の影響を受けるため、M-ary直交変調よりもビット誤り率特性が低下する。
+%
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{graph-cmp-ser.eps}
+\caption{SIK方式、M-ary直交変調方式、提案方式のシンボル誤り率
+($L_{f} = 32$)}
+\label{fig:graph-cmp-ser}
+\end{center}
+\end{figure}
+%
+
+図\ref{fig:graph-cmp-efficiency}に、$L_{f}=32$ (chip)としたときの
+1ビットあたりの受信光パワーに対する情報伝送効率示す。
+M-ary直交変調方式で用いる直交系列数を32、提案方式では、
+$(M_{os}=8,~M_{con}=4),~(M_{os}=32,~M_{con}=1)$とする。
+図より、受信光パワーにかかわらず、提案方式($M_{os}=8, M_{con}=4$)の情報伝送効率は3方式の中で最も
+良いことがわかる。
+このことから、情報伝送効率の関して、
+符号間干渉の影響よりも
+1フレームあたりに使用する系列数増加による効果のほうが高いことがわかる。
+%
+\begin{figure}[hpbt]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{graph-cmp-efficiency.eps}
+\caption{SIK方式、M-ary直交変調方式、提案方式の情報伝送効率
+($L_{f} = 32$)}
+\label{fig:graph-cmp-efficiency}
+\end{center}
+\end{figure}
+%
